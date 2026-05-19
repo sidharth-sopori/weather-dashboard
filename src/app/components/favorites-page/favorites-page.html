@@ -1,0 +1,34 @@
+<main class="favorites-page">
+  <header class="page-header">
+    <h1 class="page-title">Favorite cities</h1>
+    <p class="page-subtitle">Open a saved city on the dashboard or remove it from your list.</p>
+  </header>
+
+  @if (favoritesService.favorites().length === 0) {
+    <div class="empty-state card">
+      <span class="empty-icon">☆</span>
+      <p class="empty-title">No favorites yet</p>
+      <p class="empty-hint">Search for a city on the dashboard and use “Save to favorites” on the weather card.</p>
+      <a routerLink="/dashboard" class="primary-link">Go to Dashboard</a>
+    </div>
+  } @else {
+    <ul class="favorites-list">
+      @for (f of favoritesService.favorites(); track f.id) {
+        <li class="favorite-row card">
+          <button type="button" class="row-main" (click)="openFavorite(f)">
+            <span class="city-name">{{ f.name }}</span>
+            <span class="city-meta">{{ formatSubtitle(f) }}</span>
+          </button>
+          <button
+            type="button"
+            class="remove-btn"
+            (click)="removeFavorite(f, $event)"
+            [attr.aria-label]="'Remove ' + f.name + ' from favorites'"
+          >
+            Remove
+          </button>
+        </li>
+      }
+    </ul>
+  }
+</main>

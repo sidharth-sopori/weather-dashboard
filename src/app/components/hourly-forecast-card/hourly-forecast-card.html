@@ -1,0 +1,17 @@
+<div class="card hourly-card">
+  <h3 class="card-title">Hourly Forecast</h3>
+  @if (hourly()?.length) {
+    <div class="hourly-scroll">
+      @for (item of hourly(); track item.time.getTime()) {
+        <div class="hourly-item">
+          <span class="hour-time">{{ item.time | date: 'HH:mm' }}</span>
+          <span class="hour-icon">{{ getWeatherEmoji(item.icon) }}</span>
+          <span class="hour-temp">{{ item.temp }}°C</span>
+          <span class="hour-wind">↗ {{ item.windSpeed }} km/h</span>
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="loading">Loading...</div>
+  }
+</div>

@@ -1,0 +1,40 @@
+@if (weather()) {
+  <div class="card conditions-card">
+    <div class="temp-section">
+      <span class="temp">{{ weather()!.temp }}°C</span>
+      <span class="feels-like">Feels like: {{ weather()!.feelsLike }}°C</span>
+    </div>
+    <div class="main-condition">
+      <span class="weather-icon">{{ getWeatherEmoji(weather()!.icon) }}</span>
+      <span class="description">{{ weather()!.description | titlecase }}</span>
+    </div>
+    <div class="sun-times">
+      <span>↑ Sunrise {{ weather()!.sunrise | date: 'h:mm a' }}</span>
+      <span>↓ Sunset {{ weather()!.sunset | date: 'h:mm a' }}</span>
+    </div>
+    <div class="metrics">
+      <div class="metric">
+        <span class="metric-icon">💧</span>
+        <span class="metric-value">{{ weather()!.humidity }}%</span>
+        <span class="metric-label">Humidity</span>
+      </div>
+      <div class="metric">
+        <span class="metric-icon">💨</span>
+        <span class="metric-value">{{ weather()!.windSpeed }} km/h</span>
+        <span class="metric-label">Wind Speed</span>
+      </div>
+      <div class="metric">
+        <span class="metric-icon">📊</span>
+        <span class="metric-value">{{ weather()!.pressure }} hPa</span>
+        <span class="metric-label">Pressure</span>
+      </div>
+      <div class="metric">
+        <span class="metric-icon">☁</span>
+        <span class="metric-value">{{ weather()!.clouds }}%</span>
+        <span class="metric-label">Cloud Cover</span>
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="card conditions-card loading">Loading...</div>
+}

@@ -1,0 +1,46 @@
+.hourly-card {
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.hourly-scroll {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 1rem;
+}
+
+.hourly-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.hour-time {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.hour-icon {
+  font-size: 1.5rem;
+}
+
+.hour-temp {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.hour-wind {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.loading {
+  color: var(--text-muted);
+}

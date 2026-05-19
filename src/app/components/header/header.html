@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="theme-toggle">
+    <span class="toggle-label">{{ theme.isDark() ? 'Dark' : 'Light' }} Mode</span>
+    <button
+      type="button"
+      class="toggle-btn"
+      [class.dark]="theme.isDark()"
+      (click)="theme.toggle()"
+      [attr.aria-label]="'Toggle ' + (theme.isDark() ? 'light' : 'dark') + ' mode'"
+    >
+      <span class="toggle-thumb"></span>
+    </button>
+  </div>
+  <app-search-box
+    (citySelected)="onCitySelected($event)"
+    (searchError)="onSearchError($event)"
+    (currentLocationClicked)="onCurrentLocation()"
+  />
+  <div class="header-clock" aria-live="polite">{{ currentTime() }}</div>
+</header>

@@ -1,0 +1,41 @@
+.forecast-card {
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.forecast-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.day-icon {
+  font-size: 1.5rem;
+}
+
+.day-temp {
+  font-weight: 600;
+  min-width: 3.5rem;
+  color: var(--text-primary);
+}
+
+.day-date {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.loading {
+  color: var(--text-muted);
+}

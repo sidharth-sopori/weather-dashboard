@@ -1,0 +1,32 @@
+<div class="search-wrapper">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input
+      #searchInput
+      type="text"
+      [(ngModel)]="query"
+      (ngModelChange)="onInput()"
+      (focus)="onFocus()"
+      (blur)="closeDropdown()"
+      (keyup.enter)="onSearchClick()"
+      placeholder="Search for your preferred city..."
+      class="search-input"
+      autocomplete="off"
+    />
+  </div>
+  <button type="button" class="search-btn" (click)="onSearchClick()">Search</button>
+  @if (showDropdown && suggestions.length) {
+    <ul class="suggestions-dropdown">
+      @for (city of suggestions; track city.lat + city.lon) {
+        <li>
+          <button type="button" (mousedown)="selectCity(city)">
+            {{ city.name }}{{ city.state ? ', ' + city.state : '' }}, {{ city.country }}
+          </button>
+        </li>
+      }
+    </ul>
+  }
+  <button type="button" class="current-location-btn" (click)="onCurrentLocation()">
+    <span class="btn-icon">◎</span> Current Location
+  </button>
+</div>

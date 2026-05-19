@@ -1,0 +1,29 @@
+<main class="dashboard-content">
+  @if (error()) {
+  <div class="error-banner">{{ error() }}</div>
+  }
+  <div class="top-row">
+    <div class="current-weather-wrapper">
+      <app-current-weather-card [weather]="currentWeather()" />
+    </div>
+    <div class="highlights-wrapper">
+      <app-highlights-card [weather]="currentWeather()" />
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="forecast-wrapper">
+      <app-forecast-card [forecast]="forecastDays()" />
+    </div>
+    <div class="map-wrapper">
+      <div class="card map-card">
+        <h3 class="card-title">Map</h3>
+        <div class="map-container-wrapper">
+          <app-weather-map
+            [lat]="currentWeather()?.coord?.lat ?? 37.9838"
+            [lon]="currentWeather()?.coord?.lon ?? 23.7275"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

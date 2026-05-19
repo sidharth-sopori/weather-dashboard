@@ -1,0 +1,118 @@
+:host {
+  display: block;
+  flex: 1;
+  min-width: 0;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--card-bg);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-box:focus-within {
+  border-color: #c7d2fe;
+}
+
+.search-icon {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0.25rem 0 0;
+  padding: 0.25rem;
+  background: var(--card-bg);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.suggestions-dropdown li button {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.suggestions-dropdown li button:hover {
+  background: var(--hover-bg);
+}
+
+.search-btn {
+  padding: 0.5rem 1rem;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+
+.search-btn:hover {
+  background: var(--hover-bg);
+}
+
+.current-location-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent-bg);
+  color: var(--accent-text);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.current-location-btn:hover {
+  background: var(--accent-bg-hover);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}

@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root,
+[data-theme='light'] {
+  --bg-primary: #f6f7fb;
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --sidebar-bg: #fbfcff;
+  --card-bg: #ffffff;
+  --border-color: #e6e9f2;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  --hover-bg: #f1f4f9;
+  --active-bg: #e8edff;
+  --toggle-bg: #e5e7eb;
+  --toggle-thumb: #4b5563;
+  --accent-bg: #111827;
+  --accent-bg-hover: #0b1220;
+  --accent-text: #ffffff;
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06), 0 8px 24px rgba(17, 24, 39, 0.04);
+  --shadow-md: 0 12px 30px rgba(17, 24, 39, 0.12);
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0f172a;
+  --header-bg: #1e293b;
+  --sidebar-bg: #1e293b;
+  --card-bg: rgba(51, 65, 85, 0.8);
+  --border-color: #475569;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --hover-bg: #475569;
+  --active-bg: #475569;
+  --toggle-bg: #334155;
+  --toggle-thumb: #f8fafc;
+  --accent-bg: #22c55e;
+  --accent-bg-hover: #16a34a;
+  --accent-text: #ffffff;
+  --shadow-sm: none;
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Hide scrollbars */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}

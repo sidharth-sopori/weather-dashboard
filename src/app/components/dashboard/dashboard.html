@@ -1,0 +1,12 @@
+<div class="layout">
+  <app-sidebar (currentLocationClicked)="onCurrentLocation()" />
+  <div class="main-content">
+    <app-header 
+      (citySelected)="onCitySelected($event)" 
+      (searchError)="onSearchError($event)"
+      (currentLocationClicked)="onCurrentLocation()" 
+    />
+    <router-outlet [routerOutletData]="outletData()" />
+    <footer class="footer">Weather Dashboard by Sidharth Sopori ©</footer>
+  </div>
+</div>

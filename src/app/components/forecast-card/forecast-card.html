@@ -1,0 +1,16 @@
+<div class="card forecast-card">
+  <h3 class="card-title">7 Days Forecast</h3>
+  @if (forecast()?.length) {
+    <div class="forecast-list">
+      @for (day of forecast(); track day.date.getTime()) {
+        <div class="forecast-item">
+          <span class="day-icon">{{ getWeatherEmoji(day.icon) }}</span>
+          <span class="day-temp">{{ day.temp }}°C</span>
+          <span class="day-date">{{ day.date | date: 'EEEE, d MMM' }}</span>
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="loading">Loading...</div>
+  }
+</div>

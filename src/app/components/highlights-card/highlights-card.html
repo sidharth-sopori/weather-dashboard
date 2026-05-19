@@ -1,0 +1,38 @@
+<div class="highlights-section">
+  <h3 class="section-title">Today's Highlight</h3>
+  @if (weather()) {
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <span class="highlight-label">Wind Status</span>
+        <span class="highlight-value">{{ weather()!.windSpeed }} km/h</span>
+        <span class="highlight-sublabel">{{ weather()!.dateTime | date: 'h:mm a' }}</span>
+      </div>
+      <div class="highlight-card">
+        <span class="highlight-label">Atmospheric Pressure</span>
+        <span class="highlight-value">{{ weather()!.pressure }} hPa</span>
+      </div>
+      <div class="highlight-card">
+        <span class="highlight-label">Sunrise & Sunset</span>
+        <span class="highlight-sublabel">↑ {{ weather()!.sunrise | date: 'h:mm a' }}</span>
+        <span class="highlight-sublabel">↓ {{ weather()!.sunset | date: 'h:mm a' }}</span>
+      </div>
+      <div class="highlight-card">
+        <span class="highlight-label">Humidity</span>
+        <span class="highlight-value">{{ weather()!.humidity }}%</span>
+        <span class="highlight-sublabel">The dew point is {{ Math.round(weather()!.temp * 0.8) }} right now</span>
+      </div>
+      <div class="highlight-card">
+        <span class="highlight-label">Visibility</span>
+        <span class="highlight-value">{{ weather()!.visibility }} km</span>
+        <span class="highlight-sublabel">offering visibility</span>
+      </div>
+      <div class="highlight-card">
+        <span class="highlight-label">Feels Like</span>
+        <span class="highlight-value">{{ weather()!.feelsLike }}°</span>
+        <span class="highlight-sublabel">Humidity is making it feel hotter</span>
+      </div>
+    </div>
+  } @else {
+    <div class="loading">Loading...</div>
+  }
+</div>

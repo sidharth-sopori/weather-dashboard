@@ -1,0 +1,33 @@
+<aside class="sidebar" [class.collapsed]="collapsed()">
+  <div class="sidebar-header">
+    <div class="brand">
+      <button
+        type="button"
+        class="brand-toggle"
+        (click)="toggle()"
+        [attr.aria-label]="collapsed() ? 'Expand sidebar' : 'Collapse sidebar'"
+        title="Toggle sidebar"
+      >
+        <span class="brand-icon">❄</span>
+      </button>
+      <h1 class="app-name" [class.hidden]="collapsed()">YourWeather</h1>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+      class="nav-icon-btn" title="Dashboard">
+      <span class="nav-icon">⊞</span>
+      <span class="nav-text" [class.hidden]="collapsed()">Dashboard</span>
+    </a>
+    <a routerLink="/map" routerLinkActive="active" class="nav-icon-btn" title="Map">
+      <span class="nav-icon">🗺</span>
+      <span class="nav-text" [class.hidden]="collapsed()">Map</span>
+    </a>
+    <a routerLink="/favorites" routerLinkActive="active" class="nav-icon-btn" title="Favorites">
+      <span class="nav-icon">★</span>
+      <span class="nav-text" [class.hidden]="collapsed()">Favorites</span>
+    </a>
+
+  </nav>
+ 
+</aside>

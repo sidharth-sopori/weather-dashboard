@@ -1,0 +1,12 @@
+<main class="dashboard-content map-page-main">
+  @if (error()) {
+  <div class="error-banner">{{ error() }}</div>
+  }
+  <div class="map-page-container">
+    <app-weather-map
+      [lat]="currentWeather()?.coord?.lat ?? 28.6139"
+      [lon]="currentWeather()?.coord?.lon ?? 77.2090"
+      class="map-page-map"
+    />
+  </div>
+</main>

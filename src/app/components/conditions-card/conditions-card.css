@@ -1,0 +1,84 @@
+.conditions-card {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.temp-section {
+  grid-column: 1 / -1;
+}
+
+.temp {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+}
+
+.feels-like {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.main-condition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.weather-icon {
+  font-size: 3rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.sun-times {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.metrics {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.metric-icon {
+  font-size: 1.25rem;
+  opacity: 0.8;
+}
+
+.metric-value {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.loading {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
